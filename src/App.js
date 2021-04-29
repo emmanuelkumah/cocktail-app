@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CocktailList from "./components/CocktailList";
+import MainApp from "./components/MainApp";
 import NavBar from "./components/NavBar";
 import Review from "./components/Review";
+import SingleCocktail from "./components/SingleCocktail";
 import About from "./pages/About";
 import Home from "./pages/Home";
 
@@ -17,8 +18,11 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/cocktail-list">
-          <CocktailList />
+        <Route path="/cocktail">
+          <MainApp />
+        </Route>
+        <Route path="/single-cocktail">
+          <SingleCocktail />s
         </Route>
         <Route path="/review">
           <Review />

@@ -16,7 +16,7 @@ function HeroSection() {
                 Search for the perfect mix of spirit, fruit juice and or
                 flavored syrup for your next indoor chill-out
               </p>
-              <Link to="/cocktail-list">
+              <Link to="/cocktail">
                 <button className="btn-cta">Get Started</button>
               </Link>
             </div>

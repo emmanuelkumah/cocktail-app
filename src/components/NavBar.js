@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="nav-center">
-        <Link className="nav-logo">
+        <Link to="/" className="nav-logo">
           <h2>Punch</h2>
           <GiWineGlass className="nav-icon" />
         </Link>
