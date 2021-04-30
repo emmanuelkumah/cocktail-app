@@ -1,5 +1,5 @@
 import React from "react";
-import { GiWineGlass } from "react-icons/gi";
+import { GiGlassCelebration } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -7,8 +7,9 @@ function NavBar() {
     <nav className="navbar">
       <div className="nav-center">
         <Link to="/" className="nav-logo">
-          <h2>Punch</h2>
-          <GiWineGlass className="nav-icon" />
+          <h2>
+            Tip.sy <GiGlassCelebration />
+          </h2>
         </Link>
 
         <ul className="nav-links">
@@ -17,9 +18,6 @@ function NavBar() {
           </li>
           <li>
             <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/review">Reviews</Link>
           </li>
         </ul>
       </div>

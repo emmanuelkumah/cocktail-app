@@ -15,7 +15,6 @@ Variables
   --primaryColor: #f94144;
   --primaryDarkColor: #c02c03;
   --secondaryColor: #14213d;
-  /* --textColor: #000000; */
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBackground: #edf2f4;
@@ -71,6 +70,12 @@ p {
 ul {
   list-style-type: none;
 }
+li {
+  color: var(--secondaryColor);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
 a {
   text-decoration: none;
   color: var(--mainWhite);
@@ -85,7 +90,6 @@ img {
   height: 5rem;
   display: flex;
   align-items: center;
-  /* border-bottom: 2px solid var(--primaryColor); */
   box-shadow: var(--navbarShadow);
 }
 .nav-center {
@@ -97,7 +101,6 @@ img {
   max-width: var(--fullWidth);
 }
 .nav-logo {
-  margin-top: 1.5rem;
   display: flex;
 }
 .nav-logo > h2 {
@@ -134,7 +137,6 @@ img {
 /* Hero section */
 .home-hero-section {
   font-size: 5rem;
-  /* font-family: "Noto Sans SC", sans-serif; */
   font-weight: 300;
   color: #080708;
   padding: 20px 0;
@@ -253,6 +255,7 @@ Cocktails List
   text-align: center;
   margin-bottom: 3.5rem;
   margin-top: 1rem;
+  color: var(--secondaryColor);
 }
 .cocktails-center {
   width: var(--smallWidth);
@@ -335,6 +338,93 @@ Cocktail
   background: var(--secondaryColor);
   transition: var(--mainTransition);
 }
+/* 
+====
+Single Cocktail Card
+====
+ */
+
+.subtle {
+  color: rgb(51, 49, 49);
+}
+
+.single-card-container {
+  margin: 25px auto 0;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.single-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: var(--mainBorderRadius);
+  position: relative;
+  box-shadow: 0 0 5px rgba(75, 75, 75, 0.07);
+  z-index: 1;
+  margin-top: 5rem;
+}
+.single-card-details {
+  border: 8px solid #beb2a4;
+  border-radius: var(--mainBorderRadius);
+  padding: 20px;
+  background: #dfe4ea;
+  width: 100%;
+}
+.single-card-media {
+  float: right;
+  width: 80vw;
+  height: auto;
+}
+.single-card-body {
+  display: block;
+  width: 310px;
+}
+.single-card-title {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 60px;
+  margin: 10px 0;
+}
+.single-card-info {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin: 15px 0 0;
+  text-transform: uppercase;
+}
+.single-card-description {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin: 10px 0;
+}
+.ingredient-data {
+  background: var(--mainRed);
+  padding: 0.25rem 0.5rem;
+  margin-top: 2rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  /* border-radius: var(--mainBorderRadius); */
+  color: var(--mainWhite);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+.single-cocktail-btn {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--mainBorderRadius);
+  border: none;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: 200;
+  padding: 10px;
+  color: var(--mainWhite);
+  background: var(--secondaryColor);
+}
 
 /* 
 ====== 
@@ -375,6 +465,12 @@ Form
   font-size: 1.2rem;
 }
 
+/* 
+========
+MEDIA QUERY 
+==========
+ */
+
 /* Media query for Button on  phone */
 @media screen and (max-width: 625px) {
   .cocktail-btn .cta {
@@ -388,8 +484,12 @@ Form
     margin-bottom: 10px;
   }
 }
-/* Media query for for phone*/
+
+/* Media query for phone view */
 @media screen and (min-width: 320px) {
+  .nav-logo > h2 {
+    font-size: 1.3rem;
+  }
   .container {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -397,6 +497,45 @@ Form
   .col {
     max-width: 100%;
     flex-basis: 100%;
+  }
+  .single-card-container {
+    margin: 25px auto 0;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+  }
+  .single-card-body {
+    width: 100%;
+  }
+  .single-card-title {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+  .single-card-description {
+    font-weight: 100;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 10px 0;
+  }
+  .single-card-media {
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .ingredient-data {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--primaryColor);
+    padding: 0.25rem 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    color: var(--mainWhite);
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    width: 30vw;
+    text-transform: uppercase;
   }
 }
 /* Media query for tablet */
@@ -425,6 +564,17 @@ Form
     bottom: -10px;
     left: -160px;
   }
+  .single-card-container {
+    margin: 25px auto 0;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+  }
+  .ingredient-data {
+    width: 14vw;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 }
 
 /* Media query for desktop */
@@ -451,5 +601,19 @@ Form
     position: absolute;
     bottom: -15px;
     left: 0px;
+  }
+  .single-card-container {
+    margin: 25px auto 0;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+  }
+  .single-card-body {
+    width: 100%;
+  }
+  .ingredient-data {
+    width: 14vw;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 }

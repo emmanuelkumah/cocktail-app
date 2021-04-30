@@ -18,7 +18,10 @@ function CocktailList() {
   }
   return (
     <section className="section">
-      <h1 className="section-title">Asorted Cocktails</h1>
+      <h1 className="section-title">Make An Awesome Cocktail</h1>
+      <h4 className="section-title">
+        Choose from a large collection of time-tested cocktail recipes
+      </h4>
       <div className="cocktails-center">
         {cocktails.map((item) => {
           return <Cocktail key={item.id} {...item} />;
